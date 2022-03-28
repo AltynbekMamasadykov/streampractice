@@ -67,4 +67,12 @@ public class Book <T extends BookType> {
     public void setBook(T book) {
         this.book = book;
     }
+
+    public void like() {
+        this.likes++;
+    }
+
+    public void dislike() {
+        this.likes--;
+    }
 }
