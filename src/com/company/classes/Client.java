@@ -53,4 +53,6 @@ public class Client {
     public void dislikedABook(Book<?> book) {
         this.likedBooks.remove(book);
     }
+
+    public void buyABook(Book<?> book) {this.boughtBooks.add(book); }
 }

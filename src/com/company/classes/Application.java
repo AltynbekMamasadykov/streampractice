@@ -29,6 +29,8 @@ public class Application {
         }
     }
 
-
+    public void buyABook(Client client, Book<?> book) {
+        client.buyABook(book);
+    }
 
 }

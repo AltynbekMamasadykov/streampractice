@@ -11,6 +11,7 @@ public class Book <T extends BookType> {
     private int likes;
     private T book;
 
+
     public Book(String bookName, String bookAuthor, Set<FileInfo> images, int price, int likes, T book) {
         this.bookName = bookName;
         this.bookAuthor = bookAuthor;
@@ -75,4 +76,6 @@ public class Book <T extends BookType> {
     public void dislike() {
         this.likes--;
     }
+
+
 }
