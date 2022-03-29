@@ -1,5 +1,6 @@
 package com.company.classes;
 import com.company.exceptions.NotEnoughMoneyException;
+import java.util.HashSet;
 import java.util.Set;
 
 public class Client {
@@ -9,12 +10,12 @@ public class Client {
     private Set<Book<?>> boughtBooks;
     private double balance;
 
-    public Client(String clientName, String clientEmail, Set<Book<?>> likedBooks, Set<Book<?>> boughtBooks, double balance) {
+    public Client(String clientName, String clientEmail) {
         this.clientName = clientName;
         this.clientEmail = clientEmail;
-        this.likedBooks = likedBooks;
-        this.boughtBooks = boughtBooks;
-        this.balance = balance;
+        this.likedBooks = new HashSet<>();
+        this.boughtBooks = new HashSet<>();
+        this.balance = 0;
     }
 
     public String getClientName() {
@@ -88,4 +89,5 @@ public class Client {
                 ", balance=" + balance +
                 '}';
     }
+
 }
