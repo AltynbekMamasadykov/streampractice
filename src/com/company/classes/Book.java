@@ -12,12 +12,12 @@ public class Book <T extends BookType> {
     private T book;
 
 
-    public Book(String bookName, String bookAuthor, Set<FileInfo> images, int price, int likes, T book) {
+    public Book(String bookName, String bookAuthor, Set<FileInfo> images, int price, T book) {
         this.bookName = bookName;
         this.bookAuthor = bookAuthor;
         this.images = images;
         this.price = price;
-        this.likes = likes;
+        this.likes = 0;
         this.book = book;
     }
 
@@ -77,5 +77,15 @@ public class Book <T extends BookType> {
         this.likes--;
     }
 
-
+    @Override
+    public String toString() {
+        return "Book{" +
+                "bookName='" + bookName + '\'' +
+                ", bookAuthor='" + bookAuthor + '\'' +
+                ", images=" + images +
+                ", price=" + price +
+                ", likes=" + likes +
+                ", book=" + book +
+                '}';
+    }
 }

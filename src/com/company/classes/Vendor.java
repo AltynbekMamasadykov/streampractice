@@ -45,4 +45,14 @@ public class Vendor {
     public void setBookToSale(Set<Book<?>> bookToSale) {
         this.bookToSale = bookToSale;
     }
+
+    @Override
+    public String toString() {
+        return "Vendor{" +
+                "vendorName='" + vendorName + '\'' +
+                ", vendorEmail='" + vendorEmail + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", bookToSale=" + bookToSale +
+                '}';
+    }
 }

@@ -45,4 +45,14 @@ public class ElectronicBook implements BookType {
     public void setEbook(FileInfo ebook) {
         this.ebook = ebook;
     }
+
+    @Override
+    public String toString() {
+        return "ElectronicBook{" +
+                "fragment='" + fragment + '\'' +
+                ", pageSize=" + pageSize +
+                ", publishingHouse='" + publishingHouse + '\'' +
+                ", ebook=" + ebook +
+                '}';
+    }
 }

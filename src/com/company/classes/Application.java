@@ -1,5 +1,4 @@
 package com.company.classes;
-
 import com.company.exceptions.AlreadyDislikedException;
 import com.company.exceptions.AlreadyLikedException;
 

@@ -36,4 +36,13 @@ public class AudioBook implements BookType {
     public void setAudio(FileInfo audio) {
         this.audio = audio;
     }
+
+    @Override
+    public String toString() {
+        return "AudioBook{" +
+                "audioFragment=" + audioFragment +
+                ", duration=" + duration +
+                ", audio=" + audio +
+                '}';
+    }
 }

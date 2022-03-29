@@ -1,4 +1,5 @@
 package com.company.classes;
+import com.company.exceptions.NotEnoughMoneyException;
 import java.util.Set;
 
 public class Client {
@@ -6,12 +7,14 @@ public class Client {
     private String clientEmail;
     private Set<Book<?>> likedBooks;
     private Set<Book<?>> boughtBooks;
+    private double balance;
 
-    public Client(String clientName, String clientEmail, Set<Book<?>> likedBooks, Set<Book<?>> boughtBooks) {
+    public Client(String clientName, String clientEmail, Set<Book<?>> likedBooks, Set<Book<?>> boughtBooks, double balance) {
         this.clientName = clientName;
         this.clientEmail = clientEmail;
         this.likedBooks = likedBooks;
         this.boughtBooks = boughtBooks;
+        this.balance = balance;
     }
 
     public String getClientName() {
@@ -46,6 +49,25 @@ public class Client {
         this.boughtBooks = boughtBooks;
     }
 
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    private void checkBalance() {
+        try {
+            if (getBalance() < 0) {
+                throw new NotEnoughMoneyException();
+            }
+        }
+        catch (NotEnoughMoneyException e) {
+            System.err.println("You don't have enough money to buy the book");
+        }
+    }
+
     public void likedABook(Book<?> book) {
         this.likedBooks.add(book);
     }
@@ -55,4 +77,15 @@ public class Client {
     }
 
     public void buyABook(Book<?> book) {this.boughtBooks.add(book); }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "clientName='" + clientName + '\'' +
+                ", clientEmail='" + clientEmail + '\'' +
+                ", likedBooks=" + likedBooks +
+                ", boughtBooks=" + boughtBooks +
+                ", balance=" + balance +
+                '}';
+    }
 }

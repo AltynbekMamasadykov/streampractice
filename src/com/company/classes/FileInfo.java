@@ -36,4 +36,13 @@ public class FileInfo {
     public void setFileType(FileType fileType) {
         this.fileType = fileType;
     }
+
+    @Override
+    public String toString() {
+        return "FileInfo{" +
+                "fileName='" + fileName + '\'' +
+                ", fileSize='" + fileSize + '\'' +
+                ", fileType=" + fileType +
+                '}';
+    }
 }

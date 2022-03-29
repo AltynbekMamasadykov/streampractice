@@ -35,4 +35,13 @@ public class PaperBook implements BookType {
     public void setPublishingHouse(String publishingHouse) {
         this.publishingHouse = publishingHouse;
     }
+
+    @Override
+    public String toString() {
+        return "PaperBook{" +
+                "fragment='" + fragment + '\'' +
+                ", PageSize=" + PageSize +
+                ", publishingHouse='" + publishingHouse + '\'' +
+                '}';
+    }
 }
